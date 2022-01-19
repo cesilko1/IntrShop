@@ -18,11 +18,11 @@ services:
             - 3001
     
     frontend:
-    	build: frontend/
-    	image: intrshop:FE
-    	container_name: intrshop.fun_FE
-    	mem_limit: 15m
-    	restart: unless-stopped
+        build: frontend/
+        image: intrshop:FE
+        container_name: intrshop.fun_FE
+        mem_limit: 15m
+        restart: unless-stopped
         environment:
             # NGINX-PROXY ENVIRONMENT VARIABLES: UPDATE ME
             - VIRTUAL_HOST=is.raska-vilem.cz 
