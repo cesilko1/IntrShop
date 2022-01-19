@@ -32,7 +32,7 @@ services:
             # END NGINX-PROXY ENVIRONMENT VARIABLES
         expose:
             - 80
-    	
+
 networks:
     default:
         external:
