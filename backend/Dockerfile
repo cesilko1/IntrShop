@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:14.15.0
+FROM mhart/alpine-node:16.13.2
 
 WORKDIR /backend
 
