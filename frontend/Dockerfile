@@ -1,5 +1,5 @@
 #build environment
-FROM mhart/alpine-node:16.13.2 as build
+FROM node:16.13.2-alpine3.15 as build
 WORKDIR /frontend
 COPY ./ ./
 RUN yarn
