@@ -1,0 +1,39 @@
+version: '3.6'
+
+services:
+    backend:
+        build: backend/
+        image: intrshop:BE
+        container_name: intrshop.fun_BE
+        mem_limit: 65m
+        restart: unless-stopped
+        environment:
+            # NGINX-PROXY ENVIRONMENT VARIABLES: UPDATE ME
+            - VIRTUAL_HOST=api.is.raska-vilem.cz 
+            - VIRTUAL_PORT=3001
+            - LETSENCRYPT_HOST=api.is.raska-vilem.cz
+            - LETSENCRYPT_EMAIL=wilhelm.master@gmail.com
+            # END NGINX-PROXY ENVIRONMENT VARIABLES
+        expose:
+            - 3001
+    
+    frontend:
+    	build: frontend/
+    	image: intrshop:FE
+    	container_name: intrshop.fun_FE
+    	mem_limit: 15m
+    	restart: unless-stopped
+        environment:
+            # NGINX-PROXY ENVIRONMENT VARIABLES: UPDATE ME
+            - VIRTUAL_HOST=is.raska-vilem.cz 
+            - VIRTUAL_PORT=80
+            - LETSENCRYPT_HOST=is.raska-vilem.cz
+            - LETSENCRYPT_EMAIL=wilhelm.master@gmail.com
+            # END NGINX-PROXY ENVIRONMENT VARIABLES
+        expose:
+            - 80
+    	
+networks:
+    default:
+        external:
+            name: nginx-proxy
