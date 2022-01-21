@@ -29,7 +29,7 @@ App.get('/', (req: Request, res: Response)=>{
 });
 
 App.listen(3001, ()=>{
-    console.log("Server running...");
+    console.log("Running...");
 	console.log(Config);
 });
 
