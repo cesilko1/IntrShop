@@ -30,6 +30,7 @@ App.get('/', (req: Request, res: Response)=>{
 
 App.listen(3001, ()=>{
     console.log("Server running...");
+	console.log(Config);
 });
 
 MySQL.connect((error)=>{
